@@ -20,3 +20,6 @@ uv.toml
 .idea
 .claude/
 /uploads
+*.pyc
+*.pyo
+*.egg-info

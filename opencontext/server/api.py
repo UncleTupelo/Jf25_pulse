@@ -25,6 +25,7 @@ from .routes import (
     enhanced_search,
     events,
     health,
+    model_registry,
     monitoring,
     screenshots,
     settings,
@@ -60,4 +61,5 @@ router.include_router(messages.router)  # 新增：消息路由
 router.include_router(documents.router)  # 新增：文档上传路由
 router.include_router(data_ingestion.router)  # 新增：数据接入路由
 router.include_router(enhanced_search.router)  # 新增：增强搜索路由
+router.include_router(model_registry.router)  # 新增：模型注册路由
 router.include_router(youcom.router)  # 新增：You.com API路由
