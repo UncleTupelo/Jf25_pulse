@@ -36,6 +36,13 @@ embedding_model:
   provider: ""
   output_dim: 2048
 
+# You.com API configuration
+youcom_api:
+  enabled: true
+  base_url: "https://api-you.com"
+  api_key: "${YOUCOM_API_KEY}"
+  default_agent_id: "76e9f5ab-fd40-4dc8-b88f-5ceb3664d170"
+
 # Context capture module
 capture:
   enabled: true
