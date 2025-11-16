@@ -92,6 +92,27 @@ processing:
     resize_quality: 85 # Balance quality and performance
     enabled_delete: true
     max_raw_properties: 5
+  # Excel processor configuration
+  excel_processor:
+    enabled: true
+    max_rows_per_chunk: 100
+    extract_formulas: true
+    extract_comments: true
+    detect_tables: true
+  # Structured data processor configuration (JSON/YAML)
+  structured_data_processor:
+    enabled: true
+    max_depth: 10
+    max_array_items_per_chunk: 50
+    preserve_structure: true
+  # Code processor configuration
+  code_processor:
+    enabled: true
+    max_lines_per_chunk: 100
+    extract_functions: true
+    extract_classes: true
+    extract_imports: true
+    extract_comments: true
 
   # Context merger configuration
   context_merger:

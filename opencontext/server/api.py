@@ -19,6 +19,7 @@ from .routes import (
     completions,
     content_generation,
     context,
+    data_ingestion,
     debug,
     documents,
     events,
@@ -56,4 +57,5 @@ router.include_router(settings.router)
 router.include_router(conversation.router)  # 新增：会话路由
 router.include_router(messages.router)  # 新增：消息路由
 router.include_router(documents.router)  # 新增：文档上传路由
+router.include_router(data_ingestion.router)  # 新增：数据接入路由
 router.include_router(youcom.router)  # 新增：You.com API路由

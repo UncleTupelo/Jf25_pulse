@@ -15,6 +15,9 @@ from typing import Any, Dict, List, Optional, Protocol, Type
 from opencontext.config import GlobalConfig
 from opencontext.context_processing.processor.screenshot_processor import ScreenshotProcessor
 from opencontext.context_processing.processor.document_processor import DocumentProcessor
+from opencontext.context_processing.processor.excel_processor import ExcelProcessor
+from opencontext.context_processing.processor.structured_data_processor import StructuredDataProcessor
+from opencontext.context_processing.processor.code_processor import CodeProcessor
 from opencontext.interfaces import IContextProcessor
 from opencontext.utils.logging_utils import get_logger
 
@@ -52,6 +55,9 @@ class ProcessorFactory:
         built_in_processors = {
             "document_processor": DocumentProcessor,  # 文档处理器
             "screenshot_processor": ScreenshotProcessor,
+            "excel_processor": ExcelProcessor,  # Excel处理器
+            "structured_data_processor": StructuredDataProcessor,  # JSON/YAML处理器
+            "code_processor": CodeProcessor,  # 代码处理器
         }
 
         for name, processor_class in built_in_processors.items():
