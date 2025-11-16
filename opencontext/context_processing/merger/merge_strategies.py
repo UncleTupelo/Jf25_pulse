@@ -10,6 +10,7 @@ Provides specialized merge strategies and memory management mechanisms for diffe
 """
 
 import math
+import random
 from abc import ABC, abstractmethod
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
@@ -96,8 +97,6 @@ class ContextTypeAwareStrategy(ABC):
             return True
 
         # Probabilistic cleanup based on forgetting curve
-        import random
-
         forgetting_prob = self.calculate_forgetting_probability(context)
         return random.random() < forgetting_prob
 
