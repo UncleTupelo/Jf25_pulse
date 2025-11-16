@@ -161,6 +161,22 @@ storage:
       config:
         path: "${CONTEXT_PATH:.}/persist/sqlite/app.db"
 
+    - name: "notion_sync"
+      storage_type: "document_db"
+      backend: "notion"
+      config:
+        enabled: false # Set to true to enable Notion integration
+        api_key: "${NOTION_API_KEY}" # Notion API integration token
+        databases:
+          # Map data types to Notion database IDs
+          todos: "${NOTION_TODOS_DB_ID:}"
+          activities: "${NOTION_ACTIVITIES_DB_ID:}"
+          notes: "${NOTION_NOTES_DB_ID:}"
+        sync:
+          auto_sync: false # Automatically sync new items
+          sync_interval: 300 # Sync interval in seconds (5 minutes)
+          sync_on_create: false # Sync immediately when items are created
+
 # Context consumption module
 consumption:
   enabled: true
