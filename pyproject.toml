@@ -27,6 +27,7 @@ dependencies = [
     "pandas",
     "fastapi",
     "uvicorn",
+    "httpx",
     "openai",
     "jinja2",
     "json-repair",
