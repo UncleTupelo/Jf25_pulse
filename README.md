@@ -171,6 +171,18 @@ MineContext supports backend debugging, which can be accessed at `http://localho
 3.Adjust System Prompt for Automated Tasks
 ![后台调试3](src/backend-web-3.png)
 
+## 7. Optional: Notion Integration
+
+MineContext supports optional integration with Notion to sync your context data (todos, activities, notes) with Notion databases and query Notion to enrich your local context.
+
+**To set up Notion integration:**
+- See the detailed [Notion Setup Guide](NOTION_SETUP.md)
+- Create a Notion integration at [Notion Integrations](https://www.notion.so/my-integrations)
+- Configure database IDs in your `.env` file
+- Enable Notion sync in `config/config.yaml`
+
+**Note:** Notion integration is completely optional. MineContext works fully locally without it.
+
 # 🎃 Contribution Guide
 
 ## 🎨 Frontend Architecture
@@ -459,7 +471,7 @@ We will prioritize the expansion of Context Sources according to the following p
 | Application MCP/API          | Research Papers                           | P3       |                   |
 | Application MCP/API          | News                                      | P4       |                   |
 | Application MCP/API          | Emails                                    | P4       |                   |
-| Application MCP/API          | Notion                                    | P2       |                   |
+| Application MCP/API          | Notion                                    | P2       | ✅                |
 | Application MCP/API          | Obsidian                                  | P2       |                   |
 | Application MCP/API          | Slack                                     | P4       |                   |
 | Application MCP/API          | Jira                                      | P4       |                   |

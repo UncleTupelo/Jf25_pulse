@@ -9,9 +9,10 @@ Storage backend package initialization file
 """
 
 from .chromadb_backend import ChromaDBBackend
+from .notion_backend import NotionBackend
 from .sqlite_backend import SQLiteBackend
 
 try:
-    __all__ = ["SQLiteBackend", "ChromaDBBackend"]
+    __all__ = ["SQLiteBackend", "ChromaDBBackend", "NotionBackend"]
 except ImportError:
-    __all__ = ["SQLiteBackend", "ChromaDBBackend"]
+    __all__ = ["SQLiteBackend", "ChromaDBBackend", "NotionBackend"]
