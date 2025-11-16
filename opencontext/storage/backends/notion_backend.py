@@ -63,9 +63,7 @@ class NotionBackend(IStorageBackend):
             self._database_mappings = config.get("databases", {})
 
             if not self._database_mappings:
-                logger.warning(
-                    "No database mappings configured for Notion integration"
-                )
+                logger.warning("No database mappings configured for Notion integration")
 
             self._initialized = True
             logger.info("Notion backend initialized successfully")
@@ -119,9 +117,7 @@ class NotionBackend(IStorageBackend):
             properties = self._build_todo_properties(todo_data)
 
             # Create page in Notion
-            result = self._client.create_page(
-                database_id=database_id, properties=properties
-            )
+            result = self._client.create_page(database_id=database_id, properties=properties)
 
             page_id = result.get("id")
             logger.info(f"Todo synced to Notion: {page_id}")
@@ -161,9 +157,7 @@ class NotionBackend(IStorageBackend):
             properties = self._build_activity_properties(activity_data)
 
             # Create page in Notion
-            result = self._client.create_page(
-                database_id=database_id, properties=properties
-            )
+            result = self._client.create_page(database_id=database_id, properties=properties)
 
             page_id = result.get("id")
             logger.info(f"Activity synced to Notion: {page_id}")
@@ -279,12 +273,24 @@ class NotionBackend(IStorageBackend):
         # Add dates if available
         if todo_data.get("start_time"):
             properties["Start Date"] = {
-                "date": {"start": todo_data["start_time"].isoformat() if isinstance(todo_data["start_time"], datetime) else todo_data["start_time"]}
+                "date": {
+                    "start": (
+                        todo_data["start_time"].isoformat()
+                        if isinstance(todo_data["start_time"], datetime)
+                        else todo_data["start_time"]
+                    )
+                }
             }
 
         if todo_data.get("end_time"):
             properties["Due Date"] = {
-                "date": {"start": todo_data["end_time"].isoformat() if isinstance(todo_data["end_time"], datetime) else todo_data["end_time"]}
+                "date": {
+                    "start": (
+                        todo_data["end_time"].isoformat()
+                        if isinstance(todo_data["end_time"], datetime)
+                        else todo_data["end_time"]
+                    )
+                }
             }
 
         # Add assignee if available
@@ -293,9 +299,7 @@ class NotionBackend(IStorageBackend):
 
         return properties
 
-    def _build_activity_properties(
-        self, activity_data: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def _build_activity_properties(self, activity_data: Dict[str, Any]) -> Dict[str, Any]:
         """Build Notion page properties for an activity"""
         properties = {
             "Name": {"title": [{"text": {"content": activity_data.get("title", "")[:2000]}}]},
@@ -311,8 +315,16 @@ class NotionBackend(IStorageBackend):
         if activity_data.get("start_time") and activity_data.get("end_time"):
             properties["Date"] = {
                 "date": {
-                    "start": activity_data["start_time"].isoformat() if isinstance(activity_data["start_time"], datetime) else activity_data["start_time"],
-                    "end": activity_data["end_time"].isoformat() if isinstance(activity_data["end_time"], datetime) else activity_data["end_time"],
+                    "start": (
+                        activity_data["start_time"].isoformat()
+                        if isinstance(activity_data["start_time"], datetime)
+                        else activity_data["start_time"]
+                    ),
+                    "end": (
+                        activity_data["end_time"].isoformat()
+                        if isinstance(activity_data["end_time"], datetime)
+                        else activity_data["end_time"]
+                    ),
                 }
             }
 
@@ -377,9 +389,7 @@ class NotionBackend(IStorageBackend):
                     {
                         "object": "block",
                         "type": "paragraph",
-                        "paragraph": {
-                            "rich_text": [{"type": "text", "text": {"content": para}}]
-                        },
+                        "paragraph": {"rich_text": [{"type": "text", "text": {"content": para}}]},
                     }
                 )
 
@@ -394,9 +404,7 @@ class NotionBackend(IStorageBackend):
             title_prop = properties.get("Name", {})
             title_content = ""
             if title_prop.get("title"):
-                title_content = "".join(
-                    [t.get("plain_text", "") for t in title_prop["title"]]
-                )
+                title_content = "".join([t.get("plain_text", "") for t in title_prop["title"]])
 
             # Extract status
             status_prop = properties.get("Status", {})

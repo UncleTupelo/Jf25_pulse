@@ -80,9 +80,7 @@ class NotionSyncManager:
             logger.warning("Auto-sync thread already running")
             return
 
-        logger.info(
-            f"Starting auto-sync thread (interval: {self.sync_interval} seconds)"
-        )
+        logger.info(f"Starting auto-sync thread (interval: {self.sync_interval} seconds)")
         self._stop_sync.clear()
         self._sync_thread = threading.Thread(target=self._sync_loop, daemon=True)
         self._sync_thread.start()
@@ -280,9 +278,7 @@ class NotionSyncManager:
 
         return None
 
-    def query_notion_todos(
-        self, filter: Optional[Dict[str, Any]] = None
-    ) -> List[Dict[str, Any]]:
+    def query_notion_todos(self, filter: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         """
         Query todos from Notion
 
@@ -309,8 +305,7 @@ class NotionSyncManager:
             "auto_sync": self.auto_sync,
             "sync_interval": self.sync_interval,
             "last_sync_times": self._last_sync_times,
-            "auto_sync_running": self._sync_thread is not None
-            and self._sync_thread.is_alive(),
+            "auto_sync_running": self._sync_thread is not None and self._sync_thread.is_alive(),
         }
 
 

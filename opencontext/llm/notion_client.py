@@ -78,9 +78,7 @@ class NotionClient:
             logger.error(f"Failed to create Notion page: {str(e)}")
             raise
 
-    def update_page(
-        self, page_id: str, properties: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def update_page(self, page_id: str, properties: Dict[str, Any]) -> Dict[str, Any]:
         """
         Update an existing Notion page
 
@@ -162,9 +160,7 @@ class NotionClient:
                 params["sorts"] = sorts
 
             result = self.client.databases.query(**params)
-            logger.info(
-                f"Database query successful: {len(result.get('results', []))} results"
-            )
+            logger.info(f"Database query successful: {len(result.get('results', []))} results")
             return result
 
         except Exception as e:
@@ -204,9 +200,7 @@ class NotionClient:
                 params["sort"] = sort
 
             result = self.client.search(**params)
-            logger.info(
-                f"Search successful: {len(result.get('results', []))} results"
-            )
+            logger.info(f"Search successful: {len(result.get('results', []))} results")
             return result
 
         except Exception as e:
@@ -256,9 +250,7 @@ class NotionClient:
         try:
             logger.info(f"Appending {len(children)} blocks to {block_id}")
 
-            result = self.client.blocks.children.append(
-                block_id=block_id, children=children
-            )
+            result = self.client.blocks.children.append(block_id=block_id, children=children)
             logger.info(f"Blocks appended successfully to {block_id}")
             return result
 

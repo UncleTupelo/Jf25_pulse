@@ -74,9 +74,7 @@ class TestNotionClient(unittest.TestCase):
         # Setup mock
         mock_client = MagicMock()
         mock_client_class.return_value = mock_client
-        mock_client.databases.query.return_value = {
-            "results": [{"id": "page_1"}, {"id": "page_2"}]
-        }
+        mock_client.databases.query.return_value = {"results": [{"id": "page_1"}, {"id": "page_2"}]}
 
         # Create client and query
         client = NotionClient(api_key=self.mock_api_key)
