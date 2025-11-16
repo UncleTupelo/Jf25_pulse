@@ -20,7 +20,7 @@ logger = get_logger(__name__)
 class ICloudCapture(CloudAdapterBase):
     """
     iCloud capture component.
-    
+
     Syncs and fetches data from iCloud Drive.
     """
 
@@ -38,44 +38,44 @@ class ICloudCapture(CloudAdapterBase):
     def _validate_auth_config(self, config: Dict[str, Any]) -> bool:
         """
         Validate iCloud authentication configuration.
-        
+
         Args:
             config: Configuration dictionary
-            
+
         Returns:
             True if configuration is valid
         """
         if "apple_id" not in config or not config["apple_id"]:
             logger.error(f"{self._name}: apple_id is required")
             return False
-            
+
         if "password" not in config or not config["password"]:
             logger.error(f"{self._name}: password is required")
             return False
-            
+
         return True
 
     def _authenticate(self, config: Dict[str, Any]) -> bool:
         """
         Authenticate with iCloud.
-        
+
         Args:
             config: Configuration dictionary
-            
+
         Returns:
             True if authentication successful
         """
         try:
             self._apple_id = config.get("apple_id")
             self._password = config.get("password")
-            
+
             # Note: In a real implementation, you would use pyicloud library
             # from pyicloud import PyiCloudService
             # self._session = PyiCloudService(self._apple_id, self._password)
-            
+
             logger.info(f"{self._name}: Authentication configured (pyicloud integration required)")
             return True
-            
+
         except Exception as e:
             logger.exception(f"{self._name}: Authentication failed: {str(e)}")
             return False
@@ -83,12 +83,12 @@ class ICloudCapture(CloudAdapterBase):
     def _list_files(self) -> List[Dict[str, Any]]:
         """
         List files from iCloud Drive.
-        
+
         Returns:
             List of file information dictionaries
         """
         logger.info(f"{self._name}: Listing files (pyicloud integration required)")
-        
+
         # Placeholder: Return empty list
         # Real implementation would use:
         # files = []
@@ -100,34 +100,34 @@ class ICloudCapture(CloudAdapterBase):
         #         "size": item.get("size"),
         #         "modified_time": item.get("dateModified")
         #     })
-        
+
         return []
 
     def _download_file(self, file_info: Dict[str, Any]) -> Optional[bytes]:
         """
         Download file content from iCloud Drive.
-        
+
         Args:
             file_info: File information dictionary
-            
+
         Returns:
             File content as bytes, or None if download fails
         """
         file_name = file_info.get("name", "unknown")
         logger.info(f"{self._name}: Downloading file {file_name} (pyicloud integration required)")
-        
+
         # Placeholder: Return None
         # Real implementation would use:
         # file_obj = self._session.drive[file_name]
         # with file_obj.open(stream=True) as response:
         #     content = response.raw.read()
-        
+
         return None
 
     def _get_config_schema_impl(self) -> Dict[str, Any]:
         """
         Get configuration schema for iCloud.
-        
+
         Returns:
             Configuration schema dictionary
         """
