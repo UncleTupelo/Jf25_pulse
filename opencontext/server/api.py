@@ -22,6 +22,7 @@ from .routes import (
     data_ingestion,
     debug,
     documents,
+    enhanced_search,
     events,
     health,
     monitoring,
@@ -58,4 +59,5 @@ router.include_router(conversation.router)  # 新增：会话路由
 router.include_router(messages.router)  # 新增：消息路由
 router.include_router(documents.router)  # 新增：文档上传路由
 router.include_router(data_ingestion.router)  # 新增：数据接入路由
+router.include_router(enhanced_search.router)  # 新增：增强搜索路由
 router.include_router(youcom.router)  # 新增：You.com API路由
