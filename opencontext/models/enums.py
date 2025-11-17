@@ -19,6 +19,17 @@ class ContextSource(str, Enum):
     LOCAL_FILE = "local_file"
     WEB_LINK = "web_link"
     INPUT = "input"
+    # Cloud storage sources
+    GOOGLE_DRIVE = "google_drive"
+    ICLOUD = "icloud"
+    ONEDRIVE = "onedrive"
+    # Productivity tool sources
+    NOTION = "notion"
+    # AI conversation sources
+    CHATGPT = "chatgpt"
+    PERPLEXITY = "perplexity"
+    # File upload source
+    FILE_UPLOAD = "file_upload"
 
 
 class FileType(str, Enum):

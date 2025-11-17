@@ -444,14 +444,19 @@ We will prioritize the expansion of Context Sources according to the following p
 | Screen Screenshot            | User PC Information                       | P0       | ✅                |
 | Note Editing                 | Application Internal Creation Information | P0       | ✅                |
 | Link Upload                  | Internet Information                      | P0       |                   |
-| File Upload                  | Structured Documents                      | P1       |                   |
-| File Upload                  | Unstructured Documents                    | P1       |                   |
-| File Upload                  | Images                                    | P1       |                   |
+| File Upload                  | Structured Documents                      | P1       | ✅                |
+| File Upload                  | Unstructured Documents                    | P1       | ✅                |
+| File Upload                  | Images                                    | P1       | ✅                |
 | File Upload                  | Audio                                     | P4       |                   |
 | File Upload                  | Video                                     | P4       |                   |
 | File Upload                  | Code                                      | P4       |                   |
+| Cloud Storage Integration    | Google Drive                              | P1       | ✅                |
+| Cloud Storage Integration    | iCloud Drive                              | P1       | ✅                |
+| Cloud Storage Integration    | OneDrive                                  | P1       | ✅                |
 | Browser Extension            | AI Conversation Records                   | P2       |                   |
 | Browser Extension            | Refined Internet Information              | P5       |                   |
+| AI Conversation Sync         | ChatGPT                                   | P2       | ✅                |
+| AI Conversation Sync         | Perplexity AI                             | P2       | ✅                |
 | Meeting Records              | Meeting Information                       | P2       |                   |
 | RSS                          | Consultation Information                  | P3       |                   |
 | Deep Research                | High-Quality Research Analysis            | P3       |                   |
@@ -459,7 +464,7 @@ We will prioritize the expansion of Context Sources according to the following p
 | Application MCP/API          | Research Papers                           | P3       |                   |
 | Application MCP/API          | News                                      | P4       |                   |
 | Application MCP/API          | Emails                                    | P4       |                   |
-| Application MCP/API          | Notion                                    | P2       |                   |
+| Application MCP/API          | Notion                                    | P2       | ✅                |
 | Application MCP/API          | Obsidian                                  | P2       |                   |
 | Application MCP/API          | Slack                                     | P4       |                   |
 | Application MCP/API          | Jira                                      | P4       |                   |
@@ -472,6 +477,8 @@ We will prioritize the expansion of Context Sources according to the following p
 | Mobile Screenshot Monitor    | User Mobile End Information               | P4       |                   |
 | Smart Glasses Data Sync      | Physical World Interaction Records        | P5       |                   |
 | Smart Bracelet Data Sync     | Physiological Data                        | P5       |                   |
+
+> **New!** MineContext now supports cloud integrations for Google Drive, iCloud, OneDrive, Notion, ChatGPT, and Perplexity AI. See [CLOUD_INTEGRATIONS.md](CLOUD_INTEGRATIONS.md) for setup instructions.
 
 # 🆚 Comparison with Familiar Application
 
