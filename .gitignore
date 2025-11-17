@@ -19,3 +19,11 @@ uv.lock
 uv.toml
 .idea
 .claude/
+
+# Environment files
+.env
+*.env.local
+
+# Temporary files
+*.tmp
+=*

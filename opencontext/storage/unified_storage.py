@@ -80,6 +80,11 @@ class StorageBackendFactory:
 
         return SQLiteBackend()
 
+    def _create_notion_backend(self, config: Dict[str, Any]):
+        from opencontext.storage.backends.notion_backend import NotionBackend
+
+        return NotionBackend()
+
 
 class UnifiedStorage:
     """
