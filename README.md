@@ -44,6 +44,8 @@ Table of Contents
   - [4. Start Recording](#4-start-recording)
   - [5. Forget it](#5-forget-it)
   - [6. Backend Debugging](#6-backend-debugging)
+  - [7. Optional: Notion Integration](#7-optional-notion-integration)
+  - [8. Optional: Perplexity AI Integration](#8-optional-perplexity-ai-integration)
 - [🎃 Contribution Guide](#-contribution-guide)
   - [🎨 Frontend Architecture](#-frontend-architecture)
     - [Core Tech Stack](#core-tech-stack)
@@ -182,6 +184,18 @@ MineContext supports optional integration with Notion to sync your context data 
 - Enable Notion sync in `config/config.yaml`
 
 **Note:** Notion integration is completely optional. MineContext works fully locally without it.
+
+## 8. Optional: Perplexity AI Integration
+
+MineContext supports optional integration with Perplexity AI to sync your conversation history and research queries, enriching your local context with AI-powered research insights.
+
+**To set up Perplexity AI integration:**
+- See the detailed [Perplexity Setup Guide](PERPLEXITY_SETUP.md)
+- Obtain API access from Perplexity AI (currently in beta)
+- Configure your API key in your `.env` file
+- Enable Perplexity sync in `config/config.yaml`
+
+**Note:** Perplexity integration is completely optional. MineContext works fully locally without it.
 
 # 🎃 Contribution Guide
 
