@@ -193,6 +193,8 @@ MineContext now supports multiple cloud storage and productivity tool integratio
 
 ## Notion Integration
 
+**For detailed setup instructions, see the [Notion Setup Guide](NOTION_SETUP.md).**
+
 ### Prerequisites
 
 1. Notion account
@@ -286,6 +288,8 @@ MineContext now supports multiple cloud storage and productivity tool integratio
 - Alternative: Manual export from ChatGPT settings
 
 ## Perplexity AI Integration
+
+**For detailed setup instructions, see the [Perplexity Setup Guide](PERPLEXITY_SETUP.md).**
 
 ### Prerequisites
 
