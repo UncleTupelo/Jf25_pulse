@@ -51,6 +51,9 @@ dev = [
     "isort>=5.13.0",
     "pre-commit>=3.6.0",
 ]
+agents = [
+    "agent-lightning @ git+https://github.com/UncleTupelo/agent-lightning@main",
+]
 
 [project.scripts]
 opencontext = "opencontext.cli:main"

@@ -221,6 +221,20 @@ Let's say you're working on a project:
    )
    ```
 
+6. **New**: Launch an Agent Lightning workflow directly from MineContext
+   ```bash
+   # Check integration status
+   curl http://127.0.0.1:1733/api/agent-lightning/status | jq
+
+   # Trigger your default Lightning agent
+   curl -X POST http://127.0.0.1:1733/api/agent-lightning/run \
+     -H 'Content-Type: application/json' \
+     -d '{
+           "input": "Draft a recap using the latest captured context",
+           "parameters": {"temperature": 0.3}
+         }'
+   ```
+
 ## Database Schema
 
 Your SQLite database (`~/.opencontext/contexts.db`) has these main tables:
