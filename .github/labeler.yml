@@ -1,0 +1,43 @@
+frontend:
+  - changed-files:
+    - any-glob-to-any-file: 'frontend/**/*'
+
+backend:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - 'opencontext/**/*'
+      - '*.py'
+
+documentation:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '*.md'
+      - 'docs/**/*'
+
+config:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'config/**/*'
+      - '*.yaml'
+      - '*.yml'
+      - '*.toml'
+      - '*.json'
+
+tests:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'test_*.py'
+      - '**/test_*.py'
+      - '**/*_test.py'
+      - 'tests/**/*'
+
+workflows:
+  - changed-files:
+    - any-glob-to-any-file: '.github/**/*'
+
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'pyproject.toml'
+      - 'frontend/package.json'
+      - 'frontend/pnpm-lock.yaml'

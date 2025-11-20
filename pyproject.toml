@@ -71,6 +71,9 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["opencontext"]
 
+[tool.hatch.metadata]
+allow-direct-references = true
+
 # Black - 代码格式化工具
 [tool.black]
 line-length = 100
