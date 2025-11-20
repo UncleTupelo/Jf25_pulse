@@ -1,0 +1,63 @@
+# Automatically label PRs based on the files changed
+
+# Frontend changes
+frontend:
+  - changed-files:
+    - any-glob-to-any-file: 'frontend/**/*'
+
+# Backend changes
+backend:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - 'opencontext/**/*'
+      - '*.py'
+      - 'pyproject.toml'
+
+# Documentation
+documentation:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**.md'
+      - 'docs/**/*'
+
+# CI/CD
+ci-cd:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/**/*'
+      - '.pre-commit-config.yaml'
+
+# Configuration
+configuration:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'config/**/*'
+      - '.env.example'
+      - '*.yaml'
+      - '*.yml'
+
+# Dependencies
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'pyproject.toml'
+      - 'frontend/package.json'
+      - 'frontend/pnpm-lock.yaml'
+
+# Tests
+tests:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'test_*.py'
+      - '**/*test.ts'
+      - '**/*test.tsx'
+      - '**/*.spec.ts'
+      - '**/*.spec.tsx'
+
+# Build scripts
+build:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'build.sh'
+      - 'build.bat'
+      - '*.spec'

@@ -176,6 +176,26 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_OPTIONS: --max-old-space-size=8192
 
+      - name: Generate checksums
+        working-directory: frontend/dist
+        shell: bash
+        run: |
+          # Generate SHA256 checksums for all artifacts
+          for file in *.{exe,zip,dmg,AppImage,deb,rpm,tar.gz} 2>/dev/null; do
+            if [ -f "$file" ]; then
+              if [[ "$OSTYPE" == "darwin"* ]]; then
+                shasum -a 256 "$file" >> checksums-${{ matrix.os }}.txt
+              else
+                sha256sum "$file" >> checksums-${{ matrix.os }}.txt
+              fi
+            fi
+          done
+          # Display checksums for verification
+          if [ -f "checksums-${{ matrix.os }}.txt" ]; then
+            echo "Generated checksums:"
+            cat checksums-${{ matrix.os }}.txt
+          fi
+
       - name: Release
         uses: ncipollo/release-action@v1
         with:
@@ -184,5 +204,37 @@ jobs:
           allowUpdates: true
           makeLatest: false
           tag: ${{ steps.get-tag.outputs.tag }}
-          artifacts: 'dist/*.exe,dist/*.zip,dist/*.dmg,dist/*.AppImage,dist/*.snap,dist/*.deb,dist/*.rpm,dist/*.tar.gz,dist/latest*.yml,dist/rc*.yml,dist/beta*.yml,dist/*.blockmap'
+          artifacts: 'dist/*.exe,dist/*.zip,dist/*.dmg,dist/*.AppImage,dist/*.snap,dist/*.deb,dist/*.rpm,dist/*.tar.gz,dist/latest*.yml,dist/rc*.yml,dist/beta*.yml,dist/*.blockmap,dist/checksums-*.txt'
           token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            ## What's Changed
+            
+            Release ${{ steps.get-tag.outputs.tag }}
+            
+            ### Downloads
+            
+            - 🍎 **macOS**: Download the `.dmg` file
+            - 🪟 **Windows**: Download the `.exe` installer
+            - 🐧 **Linux**: Download `.AppImage`, `.deb`, or `.rpm` depending on your distribution
+            
+            ### Verification
+            
+            SHA256 checksums are provided in the `checksums-*.txt` files for each platform.
+            
+            To verify your download:
+            ```bash
+            # macOS/Linux
+            sha256sum -c checksums-*.txt
+            
+            # Windows (PowerShell)
+            Get-FileHash <filename> -Algorithm SHA256
+            ```
+            
+            ### Notes
+            
+            - This is an automated release build
+            - Please report any issues on [GitHub Issues](https://github.com/UncleTupelo/Jf25_pulse/issues)
+            
+            ---
+            
+            **Full Changelog**: https://github.com/UncleTupelo/Jf25_pulse/compare/v0.1.4...${{ steps.get-tag.outputs.tag }}

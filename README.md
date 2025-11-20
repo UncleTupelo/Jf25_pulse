@@ -19,6 +19,8 @@ An open-source, proactive context-aware AI partner, dedicated to bringing clarit
 [![][license-shield]][license-shield-link]  
 [![][last-commit-shield]][last-commit-shield-link]
 [![][wechat-shield]][wechat-shield-link]
+[![][ci-shield]][ci-link]
+[![][codeql-shield]][codeql-link]
 
 <a href="https://trendshift.io/repositories/15157" target="_blank"><img src="https://trendshift.io/api/badge/repositories/15157" alt="volcengine%2FMineContext | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
@@ -62,6 +64,7 @@ Table of Contents
     - [Installation](#installation)
     - [Configuration](#configuration)
     - [Running the Server](#running-the-server)
+  - [🔄 CI/CD Process](#-cicd-process)
 - [💎 The Philosophy Behind the Name](#-the-philosophy-behind-the-name)
 - [🎯 Target User](#-target-user)
 - [🔌 Context-Source](#-context-source)
@@ -457,6 +460,25 @@ Key highlights:
 
 See [AGENT_LIGHTNING_SETUP.md](AGENT_LIGHTNING_SETUP.md) for complete installation and usage details.
 
+## 🔄 CI/CD Process
+
+This project uses automated CI/CD workflows to ensure code quality, security, and reliable releases.
+
+**Key Features:**
+- ✅ **Automated Testing**: Runs on every pull request
+- 🔒 **Security Scanning**: CodeQL analysis for vulnerabilities
+- 📦 **Multi-platform Releases**: Automated builds for Mac, Windows, and Linux
+- 🤖 **Dependency Updates**: Automatic dependency monitoring with Dependabot
+- 🏷️ **Auto-labeling**: PRs are automatically labeled based on changed files
+
+**Workflows:**
+- **CI**: Linting, type checking, and build verification
+- **CodeQL**: Security vulnerability scanning
+- **Release**: Automated multi-platform builds with checksums
+- **Stale Management**: Automatic cleanup of inactive issues/PRs
+
+For detailed information about the CI/CD setup, see [CI_CD.md](CI_CD.md).
+
 # 💎 The Philosophy Behind the Name
 
 The naming of MineContext also reflects the team's ingenuity. It signifies both "my context" and "mining context." It draws inspiration from the core philosophy of Minecraft—openness, creativity, and exploration.
@@ -568,17 +590,21 @@ This repository is licensed under the Apache 2.0 License.
 
 <!-- link -->
 
-[release-shield]: https://img.shields.io/github/v/release/volcengine/MineContext?color=369eff&labelColor=black&logo=github&style=flat-square
-[release-link]: https://github.com/volcengine/MineContext/releases
+[release-shield]: https://img.shields.io/github/v/release/UncleTupelo/Jf25_pulse?color=369eff&labelColor=black&logo=github&style=flat-square
+[release-link]: https://github.com/UncleTupelo/Jf25_pulse/releases
 [license-shield]: https://img.shields.io/badge/license-apache%202.0-white?labelColor=black&style=flat-square
-[license-shield-link]: https://github.com/volcengine/MineContext/blob/main/LICENSE
-[last-commit-shield]: https://img.shields.io/github/last-commit/volcengine/MineContext?color=c4f042&labelColor=black&style=flat-square
-[last-commit-shield-link]: https://github.com/volcengine/MineContext/commits/main
+[license-shield-link]: https://github.com/UncleTupelo/Jf25_pulse/blob/main/LICENSE
+[last-commit-shield]: https://img.shields.io/github/last-commit/UncleTupelo/Jf25_pulse?color=c4f042&labelColor=black&style=flat-square
+[last-commit-shield-link]: https://github.com/UncleTupelo/Jf25_pulse/commits/main
 [wechat-shield]: https://img.shields.io/badge/WeChat-微信-4cb55e?labelColor=black&style=flat-square
 [wechat-shield-link]: https://bytedance.larkoffice.com/wiki/Hg6VwrxnTiXtWUkgHexcFTqrnpg
-[github-stars-shield]: https://img.shields.io/github/stars/volcengine/MineContext?labelColor&style=flat-square&color=ffcb47
-[github-stars-link]: https://github.com/volcengine/MineContext
-[github-issues-shield]: https://img.shields.io/github/issues/volcengine/MineContext?labelColor=black&style=flat-square&color=ff80eb
-[github-issues-shield-link]: https://github.com/volcengine/MineContext/issues
-[github-contributors-shield]: https://img.shields.io/github/contributors/volcengine/MineContext?color=c4f042&labelColor=black&style=flat-square
-[github-contributors-link]: https://github.com/volcengine/MineContext/graphs/contributors
+[github-stars-shield]: https://img.shields.io/github/stars/UncleTupelo/Jf25_pulse?labelColor&style=flat-square&color=ffcb47
+[github-stars-link]: https://github.com/UncleTupelo/Jf25_pulse
+[github-issues-shield]: https://img.shields.io/github/issues/UncleTupelo/Jf25_pulse?labelColor=black&style=flat-square&color=ff80eb
+[github-issues-shield-link]: https://github.com/UncleTupelo/Jf25_pulse/issues
+[github-contributors-shield]: https://img.shields.io/github/contributors/UncleTupelo/Jf25_pulse?color=c4f042&labelColor=black&style=flat-square
+[github-contributors-link]: https://github.com/UncleTupelo/Jf25_pulse/graphs/contributors
+[ci-shield]: https://img.shields.io/github/actions/workflow/status/UncleTupelo/Jf25_pulse/ci.yml?branch=main&label=CI&logo=github&style=flat-square
+[ci-link]: https://github.com/UncleTupelo/Jf25_pulse/actions/workflows/ci.yml
+[codeql-shield]: https://img.shields.io/github/actions/workflow/status/UncleTupelo/Jf25_pulse/codeql.yml?branch=main&label=CodeQL&logo=github&style=flat-square
+[codeql-link]: https://github.com/UncleTupelo/Jf25_pulse/actions/workflows/codeql.yml
