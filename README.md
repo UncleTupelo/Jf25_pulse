@@ -20,6 +20,10 @@ An open-source, proactive context-aware AI partner, dedicated to bringing clarit
 [![][last-commit-shield]][last-commit-shield-link]
 [![][wechat-shield]][wechat-shield-link]
 
+[![Python CI](https://github.com/UncleTupelo/Jf25_pulse/workflows/Python%20CI/badge.svg)](https://github.com/UncleTupelo/Jf25_pulse/actions/workflows/ci-python.yml)
+[![Frontend CI](https://github.com/UncleTupelo/Jf25_pulse/workflows/Frontend%20CI/badge.svg)](https://github.com/UncleTupelo/Jf25_pulse/actions/workflows/ci-frontend.yml)
+[![CodeQL](https://github.com/UncleTupelo/Jf25_pulse/workflows/CodeQL%20Security%20Analysis/badge.svg)](https://github.com/UncleTupelo/Jf25_pulse/actions/workflows/codeql-analysis.yml)
+
 <a href="https://trendshift.io/repositories/15157" target="_blank"><img src="https://trendshift.io/api/badge/repositories/15157" alt="volcengine%2FMineContext | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 👋 Join our [WeChat / Lark / Red Note Group](https://bytedance.larkoffice.com/wiki/Hg6VwrxnTiXtWUkgHexcFTqrnpg)
@@ -198,6 +202,25 @@ MineContext supports optional integration with Perplexity AI to sync your conver
 **Note:** Perplexity integration is completely optional. MineContext works fully locally without it.
 
 # 🎃 Contribution Guide
+
+## 🤖 Continuous Integration & Workflows
+
+This project uses GitHub Actions for continuous integration and automated workflows. We have comprehensive CI/CD pipelines that ensure code quality and security.
+
+**Key Workflows:**
+- **Python CI**: Linting (black, isort) and testing across multiple OS and Python versions
+- **Frontend CI**: Linting, type checking, formatting, and build verification
+- **CodeQL Security Analysis**: Weekly security scanning
+- **Pre-commit Checks**: Automated code quality checks on every PR
+- **Dependabot**: Automated dependency updates
+
+For detailed information about all workflows, local development setup, and best practices, see [WORKFLOWS.md](WORKFLOWS.md).
+
+**Before Contributing:**
+1. Install pre-commit hooks: `pre-commit install`
+2. Run pre-commit locally: `pre-commit run --all-files`
+3. Ensure your PR title follows conventional commits format (feat, fix, docs, etc.)
+4. Keep PRs focused and small when possible
 
 ## 🎨 Frontend Architecture
 
