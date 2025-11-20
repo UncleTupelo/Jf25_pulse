@@ -425,6 +425,24 @@ pip install -e .
 opencontext start --port 1733
 ```
 
+### Agent Lightning integration
+
+We now ship an optional integration with [agent-lightning](https://github.com/UncleTupelo/agent-lightning).
+After enabling the `agent_lightning` block in `config/config.yaml`, MineContext can forward
+contextual prompts to any Lightning agent you have defined. The integration automatically
+uses the Python package when it is installed (`pip install .[agents]`) and seamlessly falls
+back to a REST call if you prefer to expose agent-lightning through HTTP.
+
+Key highlights:
+
+- 🔌 **Unified client** – Works with both local Python agents and remote deployments.
+- ⚙️ **Configurable defaults** – Set a `default_agent`, override the endpoint, and customize
+  agent parameters per request.
+- 🧪 **API support** – Call `POST /api/agent-lightning/run` or `GET /api/agent-lightning/status`
+  from your automations.
+
+See [AGENT_LIGHTNING_SETUP.md](AGENT_LIGHTNING_SETUP.md) for complete installation and usage details.
+
 # 💎 The Philosophy Behind the Name
 
 The naming of MineContext also reflects the team's ingenuity. It signifies both "my context" and "mining context." It draws inspiration from the core philosophy of Minecraft—openness, creativity, and exploration.

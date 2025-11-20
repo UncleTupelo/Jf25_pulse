@@ -43,6 +43,17 @@ youcom_api:
   api_key: "${YOUCOM_API_KEY}"
   default_agent_id: "76e9f5ab-fd40-4dc8-b88f-5ceb3664d170"
 
+# Agent Lightning integration
+agent_lightning:
+  enabled: false
+  api_key: "${AGENT_LIGHTNING_API_KEY}"
+  base_url: "http://127.0.0.1:8001"
+  endpoint: "/api/agents/run"
+  default_agent: "pulse-lightning"
+  workspace_path: "${CONTEXT_PATH:.}/agent_lightning"
+  timeout: 60
+  client_options: {}
+
 # Context capture module
 capture:
   enabled: true

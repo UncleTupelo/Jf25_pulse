@@ -16,6 +16,7 @@ from opencontext.utils.logging_utils import get_logger
 # Import route modules
 from .routes import (
     agent_chat,
+    agent_lightning,
     completions,
     content_generation,
     context,
@@ -51,6 +52,7 @@ router.include_router(debug.router)
 router.include_router(monitoring.router)
 router.include_router(vaults.router)
 router.include_router(agent_chat.router)
+router.include_router(agent_lightning.router)
 router.include_router(completions.router)
 router.include_router(events.router)
 router.include_router(settings.router)
